@@ -1,0 +1,75 @@
+# Первое задание
+def div(*args):
+    try:
+        arg1 = int(input('Введите первое число '))
+        arg2 = int(input('Введите второе число '))
+        res = arg1 / arg2
+    except ValueError:
+        return 'Ошибка'
+    except ZeroDivisionError:
+        return 'Ошибка деления! Вы не можете делить на 0'
+    return res
+print(f'  {div()}')
+
+# Второе задание
+name = input('Введите Ваше имя: ')
+sname = input('Введите Вашу фамилию: ')
+y_b = input('Введите Ваш год рождения: ')
+city = input('Введите Ваш город проживания: ')
+email = input('Введите Ваш e-mail: ')
+n_phone = input('Введите Ваш номер телефона: ')
+
+def name_id(name, sname, y_b, city, email, n_phone):
+    result = name+' '+sname+' '+y_b+' '+city+' '+email+' '+n_phone
+    return result
+print(name_id(name, sname, y_b, city, email, n_phone))
+
+
+# Третье задание
+def maximum(x,y,z):
+    list1 = [x, y, z]
+    print(list1)
+    list1.sort()
+    print(list1)
+    list_res=list1[-2:]
+    print(list_res)
+    return list_res
+print(maximum(1,2,3))
+
+# Четвертое задание
+def my_func(x, y):
+    result=x**y
+    return result
+print(my_func(3, -1))
+
+# Пятое задание
+def my_sum():
+    sum_res = 0
+    ex = False
+    while ex == False:
+        number = input('Введите строку чисел, разделенных пробелом: ').split()
+        res = 0
+        for el in range(len(number)):
+            if number[el] == 'q' or number[el] == 'Q':
+                ex = True
+                break
+            else:
+                res = res + int(number[el])
+        sum_res = sum_res + res
+        print(f'Сумма равна {sum_res}')
+    print(f'Финальная сумма равна {sum_res}')
+my_sum()
+
+# Шестое задание
+def int_func(str):
+    return(str.title())
+print(int_func('text'))
+
+# Седьмое задание
+slova = input('Введите слова через пробел: ')
+c = [int_func(item) for item in slova.split()]
+print(' '.join(c))
+i=0
+while i < len(c):
+    print(c[i])
+    i+=1
